@@ -11,6 +11,18 @@
 </body>
 </html>
 <script>
+Datos =     [{"IdPregunta" : "1",
+     "Pregunta":"Seleccione la ciudad",
+     "IdTipo":"1",
+     "Observacion":"No tiene observacion",
+     "Opciones":[
+         {"IdOpcion":"1", "Descripcion":"Medellin","Valor":"Medellin"},
+         {"IdOpcion":"2", "Descripcion":"Cali","Valor":"Cali"},
+         {"IdOpcion":"3", "Descripcion":"Bogota","Valor":"Bogota"},
+         {"IdOpcion":"4", "Descripcion":"Barranquilla","Valor":"Barranquilla"}
+         ]
+     }];
+    
 function AdicionarPreguntas(datos)
 {
     var Pregunta = '';
@@ -21,23 +33,25 @@ function AdicionarPreguntas(datos)
             datos[i].Pregunta + '<br>' +
             datos[i].Observacion + '<br>';
             var opciones = datos[i].Opciones;
-//            for (var j = 0; j < opciones.length ; j++)
-//            {
-//              Pregunta = Pregunta + '<input type="radio" Name="Opcion"' + opciones[j].IdOpcion + 
-//                        ' value="' + opciones[j].IdOpcion + '">' + opciones[j].Descripcion + '<br>';
-//            }
+            for (var j = 0; j < opciones.length ; j++)
+            {
+              Pregunta = Pregunta + '<input type="radio" Name="Opcion"' + opciones[j].IdOpcion + 
+                        ' value="' + opciones[j].IdOpcion + '">' + opciones[j].Descripcion + '<br>';
+            }
             Pregunta = Pregunta + '</div><br>';
             $('.contenedorEncuentas').append(Pregunta);
     }
 }
     
 $(function(){
-    $.ajax({ 
-        url: "configuracion.json", 
-        success: function(data) {
-            alert(data.length);
-            AdicionarPreguntas(data);
-        }
-    });
+    alert(Datos.length);
+    AdicionarPreguntas(Datos);
+//    $.ajax({
+//        url: "configuracion.json", 
+//        success: function(data) {
+//            alert(data.length);
+//            AdicionarPreguntas(data);
+//        }
+//    });
 });
 </script>
