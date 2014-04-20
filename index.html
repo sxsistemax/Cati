@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+    <title>Prueba</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<html>
+<body>
+    Prueba encuesta
+    <div class="contenedorEncuentas">
+    </div>
+</body>
+</html>
+<script>
+function AdicionarPreguntas(datos)
+{
+    var Pregunta = '';
+    for (var i = 0; i < datos.length; i++)
+    {
+        Pregunta = '<div = "Pregunta"' + datos[i].IdPregunta + 
+            'data-IdPregunta="' + datos[i].IdPregunta + '">' +
+            datos[i].Pregunta + '<br>' +
+            datos[i].Observacion + '<br>';
+            var opciones = datos[i].Opciones;
+            for (var j = 0; j < opciones.length ; j++)
+            {
+              Pregunta = Pregunta + '<input type="radio" Name="Opcion"' + opciones[j].IdOpcion + 
+                        ' value="' + opciones[j].IdOpcion + '">' + opciones[j].Descripcion + '<br>';
+            }
+            Pregunta = Pregunta + '</div>';
+            
+            $('.contenedorEncuentas').append(Pregunta);
+    }
+}
+$(function(){
+    $.ajax({ 
+        url: "configuracion.json", 
+        success: function(data) {
+            AdicionarPreguntas(data);
+        }
+    });
+});
+</script>
