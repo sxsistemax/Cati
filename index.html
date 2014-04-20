@@ -16,33 +16,33 @@ function AdicionarPreguntas(datos)
     var Pregunta = '';
     for (var i = 0; i < datos.length; i++)
     {
-        alert(1);
+        alert('1');
         Pregunta = '<div = "Pregunta"' + datos[i].IdPregunta + 
             'data-IdPregunta="' + datos[i].IdPregunta + '">' +
             datos[i].Pregunta + '<br>' +
             datos[i].Observacion + '<br>';
             var opciones = datos[i].Opciones;
-            alert(2);
+            alert('2');
             for (var j = 0; j < opciones.length ; j++)
             {
               Pregunta = Pregunta + '<input type="radio" Name="Opcion"' + opciones[j].IdOpcion + 
                         ' value="' + opciones[j].IdOpcion + '">' + opciones[j].Descripcion + '<br>';
             }
-            alert(3);
+            alert('3');
 
             Pregunta = Pregunta + '</div>';
-        alert(4);
+        alert('4');
             
             $('.contenedorEncuentas').append(Pregunta);
     }
 }
 $(function(){
-            alert(inicio);
+            alert("inicio");
 
     $.ajax({ 
         url: "configuracion.json", 
         success: function(data) {
-                    alert(0);
+                    alert("0");
 
             AdicionarPreguntas(data);
         }
