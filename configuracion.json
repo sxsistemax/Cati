@@ -1,11 +1,24 @@
-    [{"IdPregunta" : "1",
-     "Pregunta":"Seleccione la ciudad",
-     "IdTipo":"1",
-     "Observacion":"No tiene observacion",
-     "Opciones":[
-         {"IdOpcion":"1", "Descripcion":"Medellin","Valor":"Medellin"},
-         {"IdOpcion":"2", "Descripcion":"Cali","Valor":"Cali"},
-         {"IdOpcion":"3", "Descripcion":"Bogota","Valor":"Bogota"},
-         {"IdOpcion":"4", "Descripcion":"Barranquilla","Valor":"Barranquilla"}
+    [
+        {"IdPregunta" : "1",
+         "Pregunta":"Seleccione la ciudad",
+         "IdTipo":"1",
+         "Observacion":"No tiene observacion",
+         "Opciones":[
+             {"IdOpcion":"1", "Descripcion":"Medellin","Valor":"Medellin"},
+             {"IdOpcion":"2", "Descripcion":"Cali","Valor":"Cali"},
+             {"IdOpcion":"3", "Descripcion":"Bogota","Valor":"Bogota"},
+             {"IdOpcion":"4", "Descripcion":"Barranquilla","Valor":"Barranquilla"}
          ]
-     }]
+     },
+        {"IdPregunta" : "2",
+         "Pregunta":"Genero",
+         "IdTipo":"1",
+         "Observacion":"",
+         "Opciones":[
+             {"IdOpcion":"1", "Descripcion":"Masculino","Valor":"Masculino"},
+             {"IdOpcion":"2", "Descripcion":"Femenino","Valor":"Femenino"}
+         ]
+     }
+        
+
+    ]
